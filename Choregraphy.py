@@ -1,23 +1,23 @@
 import time
+from Pose import *
 
-class Chroregraphy():
-
+class Choregraphy():
     _poses = []
-    _interval = []
+    def __init__(self, poppy):
+        self._poppy = poppy
 
-    def AddPose(self, pose, interval=0):
-        assert(pose.length = 6)
-        _poses.append(pose)
-        _interval.append(interval)
+    def AddPose(self, p):
+        self._poses.append(p)
 
 
 
    # def RemovePose(self, i):
         
 
-    def Start():
-        assert(_poses.length == _interval.length)
-        for pose in _poses:
-            
+    def start(self):
+        for pose in self._poses:
+            pose.execDeplacement(self._poppy)
+
+        self._poses[0].execDeplacement(self._poppy)
 
 
