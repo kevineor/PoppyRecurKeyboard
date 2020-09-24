@@ -12,6 +12,7 @@ class Pose(ABCDeplacement):
     def __init__(self, m1, m2, m3, m4, m5, m6, duration=0, sleeping=0):
         self.__init__([duration,m1, m2, m3, m4, m5, m6], sleeping)
     """
+    #command = [duration,m1, m2, m3, m4, m5, m6]
     def __init__(self, command, sleeping=0):
         assert(len(command) ==7)
         self._command   = command
@@ -40,7 +41,7 @@ class Routine(ABCDeplacement):
 
     
 class PoseList:
-    BasePosture     = Pose([0,0,0,0,0,0,0],0)
-    Reverse         = Pose([5,0,0,-90,-90,90,0],10)
-    Sky_Watching    = Pose([0,0,0,0,0,0,0],3)
-    Le_Plongeur     = Pose([0,0,0,0,0,0,0],2)
+    BasePosture     = Pose([0.5,0,0,0,0,0,0],0)
+    Reverse         = Pose([1,0,0,-90,-90,90,0],3)
+    Sky_Watching    = Pose([1,0,0,0,0,0,0],3)
+    Le_Plongeur     = Pose([1,0,0,0,0,0,0],2)

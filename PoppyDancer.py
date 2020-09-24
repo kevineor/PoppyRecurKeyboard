@@ -40,7 +40,7 @@ class PoppyDancer():
                                       'm4':command[4],
                                       'm5':command[5],
                                       'm6':command[6]},
-                                      command[0], wait=True)
+                                      command[0])
         
         # Done
         return True
