@@ -18,6 +18,6 @@ class Choregraphy():
         for pose in self._poses:
             pose.execDeplacement(self._poppy)
 
-        self._poses[0].execDeplacement(self._poppy)
+        #self._poses[0].execDeplacement(self._poppy)
 
 

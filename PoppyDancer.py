@@ -7,8 +7,8 @@ from Pose import *
 class PoppyDancer():
     
     def __init__(self):
-        self._poppy = PoppyErgoJr()
-        self.choregraphy = Choregraphy(self)
+        self._poppy         = PoppyErgoJr(      )
+        self.choregraphy    = Choregraphy( self )
   
 
 
@@ -34,13 +34,20 @@ class PoppyDancer():
             return False
         
         # Send rotation request to motors and wait until rotation is executed
-        self._poppy.goto_position({'m1':command[1],
-                                      'm2':command[2],
-                                      'm3':command[3],
-                                      'm4':command[4],
-                                      'm5':command[5],
-                                      'm6':command[6]},
-                                      command[0])
+        i = 1
+        for motor in self._poppy.motors:
+            if (command[i] != None):
+                motor.goto_position(command[i], command [0])
+            i+=1
+            """
+        self._poppy.goto_position(  { 'm1': command[1]
+                                    , 'm2': command[2]
+                                    , 'm3': command[3]
+                                    , 'm4': command[4]
+                                    , 'm5': command[5]
+                                    , 'm6': command[6] }
+                                ,           command[0] )
+            """
         
         # Done
         return True
